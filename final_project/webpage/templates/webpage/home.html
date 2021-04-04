@@ -1,0 +1,52 @@
+{% extends "webpage/base.html" %}
+{% block content %}
+    <div class="video-wrap">
+        <video id="video" playsinline autoplay></video>
+    </div>
+
+    <div class="controller">
+        <button id="snap">Capture</button>
+    </div>
+
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <script>
+        'use strict';
+
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const snap = document.getElementById('snap');
+        const errorMsgElement = document.getElementById('errorMsgElement');
+
+        const constraints = {
+            audio: false,
+            video: {
+                width: 1280, height: 720
+            },
+        };
+
+        //access webcam
+        async function init() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                handleSuccess(stream);
+            } catch(e) {
+                errorMsgElement.innerHTML = `navigator.getUserMedia.error:${e.toString()}`;
+            }
+        }
+
+        //success 
+        function handleSuccess(stream) {
+            window.stream = stream;
+            video.srcObject = stream;
+        }
+
+        //init function
+        init();
+
+        var context = canvas.getContext('2d');
+        snap.addEventListener("click", function(){
+            context.drawImage(video, 0, 0, 640, 480);
+        });
+    </script>
+{% endblock content %}
