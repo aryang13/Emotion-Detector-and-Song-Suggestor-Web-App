@@ -1,6 +1,3 @@
-../Project Checklist.gsheet
-../Song Recommendation List.gdoc
-../env/
 .gcloudignore
 cloud_sql_proxy.exe
 env/
