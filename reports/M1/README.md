@@ -15,3 +15,4 @@ reference:
 https://heartbeat.fritz.ai/deploying-machine-learning-models-on-google-cloud-platform-gcp-7b1ff8140144
 https://medium.com/analytics-vidhya/deploying-deep-learning-django-app-to-google-cloud-platform-70bab374704c
 ### 4. Arya Phan
+Arya was responsible for srcaping images online and creating the dataset. She collected all images for the four emotions by using Bing image scraping tools and then manually went through each folder to make sure all images that are duplicated or not appropriate for the project were screened out. Arya is currently drafting the frontend of our webpage using HTML and CSS. 
