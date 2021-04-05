@@ -1,0 +1,7 @@
+instance ID: webpage-instance
+password: KjN52qz0EfxaIe9L
+
+connection name: valid-broker-309114:us-central1:webpage-instance
+
+admin username: aryan
+admin password: KjN52qz0EfxaIe9L
