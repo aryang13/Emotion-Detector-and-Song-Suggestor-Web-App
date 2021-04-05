@@ -3,7 +3,9 @@
 
 Our team created a dataset with 4 classes representing 4 basic human emotions: happy, sad, angry and neutral. Each emotion has around 500-600 images after considering rejects. We were able to eliminate all duplicated and irrelevant images by using web scraping tools and also by manually double checking that all images are unique and appropriate for the project. All images were scraped from Bing and saved in folders that serve as our class labels inside the "dataset" directory (please see Datacreation.ipynb notebook for the code). 
 
+////////// in progress //////////////
 
+## Current challenges
 
 ## Team member's tasks
 ### 1. Deepan Chakravarthy
@@ -17,4 +19,4 @@ reference:
 https://heartbeat.fritz.ai/deploying-machine-learning-models-on-google-cloud-platform-gcp-7b1ff8140144
 https://medium.com/analytics-vidhya/deploying-deep-learning-django-app-to-google-cloud-platform-70bab374704c
 ### 4. Arya Phan
-Arya was responsible for srcaping images online and creating the dataset. She collected all images for the four emotions by using Bing image scraping tools and then manually went through each folder to make sure all images that are duplicated or not appropriate for the project were screened out. Arya is currently drafting the frontend of our webpage using HTML and CSS. 
+Arya was responsible for srcaping images online and creating the dataset. She collected all images for the four emotions by using Bing image scraping tools and then manually went through each folder to make sure all images that are duplicated or not appropriate for the project were screened out. Arya is currently drafting the frontend of our webpage using HTML and CSS. Additionally, she is also researching output songs that correspond to each emotion together with the team.
