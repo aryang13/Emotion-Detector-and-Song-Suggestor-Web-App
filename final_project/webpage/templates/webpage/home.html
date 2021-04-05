@@ -1,0 +1,15 @@
+{% extends "webpage/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="video-wrap">
+        <video id="video" playsinline autoplay></video>
+    </div>
+
+    <div class="controller">
+        <button id="snap">Capture</button>
+    </div>
+
+    <canvas id="canvas" width="720" height="640"></canvas>
+
+    <script type="text/javascript" src="{% static 'webpage/js/webcam.js' %}"></script>
+{% endblock content %}
