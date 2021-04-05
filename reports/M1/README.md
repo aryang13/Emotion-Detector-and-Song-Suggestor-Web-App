@@ -7,6 +7,8 @@ Our team created a dataset with 4 classes representing 4 basic human emotions: h
 
 ## Team member's tasks
 ### 1. Deepan Chakravarthy
+was responsible for the skeleton code of the model and training of the dataset. The prepared dataset was loaded with the appropriate labels and transformed. As we are applying transfer learning, a pretrained resnet18 was loaded with no modifications to the layers yet. this was done to check the accuracy of the model given a raw resnet18. Since this is a classification task, crossentropy loss was used for training.
+A test accuracy of 85% was acheived after 10 epochs. I am currently working on modifying the FC layers and validating the code. 
 ### 2. Aryan Gandhi
 ### 3. Steve He
 Since we are planning to host the website using google cloud service, I have tried to deploy some simple (non-ML related) dynamic website using through Django. And users are able to visit our website given the public address of our hosting machien.
