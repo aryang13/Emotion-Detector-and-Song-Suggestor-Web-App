@@ -1,7 +1,15 @@
 # Milestone M1 report
 ## Current state
 
-Our team created a dataset with 4 classes representing 4 basic human emotions: happy, sad, angry and neutral. Each emotion has around 500-600 images after considering rejects. We were able to eliminate all duplicated and irrelevant images by using web scraping tools and also by manually double checking that all images are unique and appropriate for the project. All images were scraped from Bing and saved in folders that serve as our class labels inside the "dataset" directory (please see Datacreation.ipynb notebook for the code). 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are currently on track of what was stated for Milestone 1 in the project proposal. No changes were made to the prosopal as the team deemed the goals for this milestone were attainable. Throughout the week we were able to create the dataset, create a model, build a django framework and deploy it on google cloud. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The dataset that we created contains 4 different emotions: happy, sad, angry, and neutral. The dataset was created using Bing-Bulk-Image-Downloader (https://github.com/ostrolucky/Bulk-Bing-Image-downloader), where we were we able to attain around 500-600 images for each emotion after taking out rejects. The rejects were eliminated due to various reasons and were hand selected based on judgement of the student. The folders were saved on github and are accessible by anyone on the repo. The code for the extraction of the dataset is written in the Datacreation.ipynb.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The model was created using similar principles to assignment 2. The model has been tested using the datasets that were discussed above. We are currently able to achieve a accurracy of 80% using the first model created. The goal in the future is to achieve an accuracy of 90-95% by the end of the project. The model code is written in ModelSkeleton.ipynb.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For the web framework it was decided to use django due to its simplicity on creating websites. Currently a frontend has been created where you are able to go to different pages from a navbar. In addition the website is able to access your webcam and take photos of your face when the capture button is pressed.  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ////////// in progress //////////////
 
@@ -9,7 +17,7 @@ Our team created a dataset with 4 classes representing 4 basic human emotions: h
 
 ## Team member's tasks
 ### 1. Deepan Chakravarthy
-was responsible for the skeleton code of the model and training of the dataset. The prepared dataset was loaded with the appropriate labels and transformed. As we are applying transfer learning, a pretrained resnet18 was loaded with no modifications to the layers yet. this was done to check the accuracy of the model given a raw resnet18. Since this is a classification task, crossentropy loss was used for training.
+I was responsible for the skeleton code of the model and training of the dataset. The prepared dataset was loaded with the appropriate labels and transformed. As we are applying transfer learning, a pretrained resnet18 was loaded with no modifications to the layers yet. this was done to check the accuracy of the model given a raw resnet18. Since this is a classification task, crossentropy loss was used for training.
 A test accuracy of 85% was acheived after 10 epochs. I am currently working on modifying the FC layers and validating the code. 
 ### 2. Aryan Gandhi
 ### 3. Steve He
