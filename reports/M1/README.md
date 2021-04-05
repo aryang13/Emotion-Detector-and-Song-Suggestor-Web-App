@@ -11,7 +11,7 @@
 
 ![alt text](https://github.com/UBC-CPEN291/project-team-allosaurus/blob/main/reports/M1/currentwebsite.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We decided to use Google Cloud for deploying our Django web application (https://cloud.google.com/python/django/appengine#windows_1). We have set up an instance that allows google cloud to deploy the Django webpage so that everyone can access with the link provided. Some problems that occurred when trying to deploy it was mainly when we tried to allow webcam access to the users, however, after fixing the app.yaml and the settings.py file, we were able to get everything working.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We decided to use Google Cloud for deploying our Django web application (https://cloud.google.com/python/django/appengine#windows_1). We have set up an instance that allows google cloud to deploy the Django webpage so that everyone can access with the link provided. Some problems that occurred when trying to deploy the application were mainly when we tried to access static files such as the user was not able to access webcam and the navigation bar was not showing however, after fixing the app.yaml and the settings.py file, we were able to get everything working the same as it was on the local host.
 
 ## Current challenges
 
