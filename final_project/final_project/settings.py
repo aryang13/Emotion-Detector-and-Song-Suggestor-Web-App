@@ -91,23 +91,11 @@ if os.getenv('GAE_APPLICATION', None):
 else:
      DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '127.0.0.1',
-            'USER': 'user1',
-            'PASSWORD': '123456789',
-            'NAME': 'main',
-        }
-    }
-
-if os.getenv('TRAMPOLINE_CI', None):
-    DATABASES = {
-        'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
         }
     }
-
-
+    
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
