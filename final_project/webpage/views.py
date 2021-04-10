@@ -27,6 +27,12 @@ class Home(TemplateView):
 #     }
 #     return render(request, 'webpage/home.html', context)
 
+def homepage(request):
+    return render(request, 'webpage/homepage.html')
+
+def music(request):
+    return render(request, 'webpage/music.html')
+
 def about(request):
     return render(request, 'webpage/about.html', {'title': 'About'})
 
