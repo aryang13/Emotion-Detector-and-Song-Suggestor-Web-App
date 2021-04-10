@@ -52,11 +52,21 @@
       
       <a href="#" class="btn btn-lg btn-secondary fw-bold border-black transparency">How are you feeling?</a>
     </p>
+    <div class="video-wrap">
+      <video id="video" playsinline autoplay></video>
+    </div>
+
+    <div class="controller">
+      <button id="snap" class="btn btn-lg btn-secondary fw-bold border-black transparency">Capture</button>
+    </div>
+
+    <canvas id="canvas" width="300" height="300"></canvas>
   </main>
 
   <footer class="mt-auto text-white-50">
   </footer>
 
+  <script type="text/javascript" src="{% static 'webpage/js/webcam.js' %}"></script>
 </div>
 
 

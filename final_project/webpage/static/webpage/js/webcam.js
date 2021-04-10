@@ -8,7 +8,7 @@ const errorMsgElement = document.getElementById('errorMsgElement');
 const constraints = {
     audio: false,
     video: {
-        width: 1280, height: 720
+        width: 300, height: 300
     },
 };
 
@@ -33,5 +33,5 @@ init();
 
 var context = canvas.getContext('2d');
 snap.addEventListener("click", function(){
-    context.drawImage(video, 0, 0, 720, 640);
+    context.drawImage(video, 0, 0, 300, 300);
 });
