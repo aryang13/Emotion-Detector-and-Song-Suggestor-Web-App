@@ -8,7 +8,7 @@ const errorMsgElement = document.getElementById('errorMsgElement');
 const constraints = {
     audio: false,
     video: {
-        width: 720, height: 720
+        width: 300, height: 300
     },
 };
 
@@ -33,7 +33,7 @@ init();
 
 var context = canvas.getContext('2d');
 snap.addEventListener("click", function(){
-    context.drawImage(video, 0, 0, 200, 200);
+    context.drawImage(video, 0, 0, 150, 150);
     var myImage = canvas.toDataURL("image/png");
     // document.getElementById('hidden_form').value = myImage;
     console.log(myImage);
