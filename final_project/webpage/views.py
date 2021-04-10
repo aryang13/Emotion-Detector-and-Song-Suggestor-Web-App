@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -21,4 +22,10 @@ def home(request):
 
 def about(request):
     return render(request, 'webpage/about.html', {'title': 'About'})
+
+def my_image(request):
+    print("--------------------------------------")
+    print(request.GET.get('taken_image'))
+    print("--------------------------------------")
+    return HttpResponse('')
 

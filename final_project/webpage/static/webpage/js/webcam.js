@@ -8,7 +8,7 @@ const errorMsgElement = document.getElementById('errorMsgElement');
 const constraints = {
     audio: false,
     video: {
-        width: 1280, height: 720
+        width: 720, height: 720
     },
 };
 
@@ -33,5 +33,23 @@ init();
 
 var context = canvas.getContext('2d');
 snap.addEventListener("click", function(){
-    context.drawImage(video, 0, 0, 720, 640);
+    context.drawImage(video, 0, 0, 200, 200);
+    var myImage = canvas.toDataURL("image/png");
+    // document.getElementById('hidden_form').value = myImage;
+    console.log(myImage);
+    $.ajax({
+        type: 'get',
+        url: 'my_image/',
+        data: {
+            "taken_image": myImage,
+        },
+        dataType: "json",
+        success: function (data) {
+            // any process in data
+            console.log("successfull")
+        },
+        failure: function () {
+            console.log("failure");
+        }
+    });
 });
