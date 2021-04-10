@@ -22,6 +22,9 @@ def home(request):
 def homepage(request):
     return render(request, 'webpage/homepage.html')
 
+def music(request):
+    return render(request, 'webpage/music.html')
+
 def about(request):
     return render(request, 'webpage/about.html', {'title': 'About'})
 
