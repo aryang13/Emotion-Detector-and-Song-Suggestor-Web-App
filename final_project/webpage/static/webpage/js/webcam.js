@@ -34,9 +34,21 @@ init();
 var context = canvas.getContext('2d');
 snap.addEventListener("click", function(){
     context.drawImage(video, 0, 0, 300, 300);
+    var myImage = canvas.toDataURL("image/png");
+    document.getElementById('imageData').value = myImage;
+    // $.ajax({
+    //     type: 'get',
+    //     url: 'my_image/',
+    //     data: {
+    //         "taken_image": myImage,
+    //     },
+    //     dataType: "json",
+    //     success: function (data) {
+    //         // any process in data
+    //         console.log("successful")
+    //     },
+    //     failure: function () {
+    //         console.log("failure");
+    //     }
+    // });
 });
-
-
-
-
-
