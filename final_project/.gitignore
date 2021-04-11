@@ -1,5 +1,5 @@
 .gcloudignore
 cloud_sql_proxy.exe
 env/
-static/
 webpage/static/admin/
+db.sqlite3

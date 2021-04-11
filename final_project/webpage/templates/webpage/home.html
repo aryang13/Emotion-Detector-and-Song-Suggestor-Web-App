@@ -1,15 +1,20 @@
 {% extends "webpage/base.html" %}
 {% load static %}
 {% block content %}
+
     <div class="video-wrap">
         <video id="video" playsinline autoplay></video>
     </div>
 
-    <div class="controller">
-        <button id="snap">Capture</button>
-    </div>
+    <canvas id="canvas" width="300" height="300" hidden></canvas>
+    <form id="imageForm" name="imageForm" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <input type="hidden" name="imageData" id="imageData" value=""/>
+        <div class="controller">
+            <button id="snap">Capture</button>
+        </div>
+    </form>
 
-    <canvas id="canvas" width="720" height="640"></canvas>
 
     <script type="text/javascript" src="{% static 'webpage/js/webcam.js' %}"></script>
 {% endblock content %}
