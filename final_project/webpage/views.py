@@ -29,22 +29,22 @@ def write_image(image):
 
 def music(request, img):
     write_image(img)
-    model=torch.load('final_project/projectmod')
+    model=torch.load('final_project/projectmod',map_location=torch.device('cpu'))
     model.eval()
     xform = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor()])
     data = xform(img)
-    output = model(data[None, ...].to(device))
+    output = model(data[None, ...])
     preds=torch.max(output.detach(), 1)[1].item()
-    if(preds==0)
+    if(preds==0):
         #return angry list
         return render(request,'webpge/music.html')
-    if(preds==1)
+    if(preds==1):
         #return happy list
         return render(request,'webpge/music.html')
-    if(preds==2)
+    if(preds==2):
         #return neutral list
         return render(request,'webpge/music.html')
-    if(preds==3)
+    if(preds==3):
         #return sad list
         return render(request,'webpge/music.html')
 
