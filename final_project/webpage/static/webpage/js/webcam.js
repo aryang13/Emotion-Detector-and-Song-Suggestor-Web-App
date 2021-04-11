@@ -33,7 +33,7 @@ init();
 
 var context = canvas.getContext('2d');
 snap.addEventListener("click", function(){
-    context.drawImage(video, 0, 0, 300, 300);
+    context.drawImage(video, 0, 0, 224, 224);
     var myImage = canvas.toDataURL("image/png");
     document.getElementById('imageData').value = myImage;
     // $.ajax({
