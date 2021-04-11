@@ -7,36 +7,7 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
-songs = [
-    {
-        'title': 'Party in the USA',
-        'singer': 'Miley Cyrus',
-    },
-    {
-        'title': 'Wet Dreamz',
-        'singer': 'J. Cole',
-    },
-]
-
-class Home(TemplateView):
-    template_name = 'webpage/base.html'
-
-# def home(request):
-#     context = {
-#         'songs': songs
-#     }
-#     return render(request, 'webpage/home.html', context)
-
 def homepage(request):
-    return render(request, 'webpage/homepage.html')
-
-def music(request):
-    return render(request, 'webpage/music.html')
-
-def about(request):
-    return render(request, 'webpage/about.html', {'title': 'About'})
-
-def my_image(request):
 
     data_uri = request.POST.get('imageData')
 
@@ -45,12 +16,17 @@ def my_image(request):
         
         data = base64.b64decode(encoded)
         im_arr = np.frombuffer(data, dtype=np.uint8)
-        img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
-
-        write_image(img)
-        return about(request)
+        img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR) 
+        return music(request, img)
         
-    return render(request, 'webpage/home.html')
+    return render(request, 'webpage/homepage.html')
 
 def write_image(image):
     cv2.imwrite("webpage\\images\\image.png", image)
+
+def music(request, img):
+    write_image(img)
+    return render(request, 'webpage/music.html')
+
+def about(request):
+    return render(request, 'webpage/about.html', {'title': 'About'})

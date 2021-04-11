@@ -64,4 +64,11 @@ body {
   font-size: 1.2rem;
 }
 
+.video-wrap {
+  display: none;
+}
+
+.controller {
+  display: none;
+}
 

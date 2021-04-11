@@ -34,6 +34,14 @@
     
     <link type="text/css" href="{% static 'webpage/css/homepage.css' %}" rel="stylesheet">
    
+    <script>
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
 
   </head>
   <body class="d-flex h-100 text-center text-white background">
@@ -41,7 +49,7 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">Final Project</h3>
+      <h3 class="float-md-start mb-0" href="{% url 'homepage' %}">Final Project</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
         <a class="nav-link" href="#">About</a>
@@ -53,24 +61,42 @@
     <h1>Hey, we have a song for you :)</h1>
     <p class="lead">Upload your photo and we will generate songs that suit your current mood</p>
     <p class="lead">
-      <a href="{% url 'music' %}">
-        <button id="startCamera" class="btn btn-lg btn-secondary fw-bold border-black transparency" >How are you feeling?</button>
+      <a>
+        <button id="startCamera" class="btn btn-lg btn-secondary fw-bold border-black transparency" onclick="show()">How are you feeling?</button>
       </a>  
     </p>
 
-    <div class="video-wrap">
+    <div class="video-wrap" id="video-wrap">
       <video id="video" playsinline autoplay></video>
     </div>
 
-    <div class="controller">
-      <button id="snap" class="btn btn-lg btn-secondary fw-bold border-black transparency">Capture</button>
-    </div>
-
-    <canvas id="canvas" width="300" height="300"></canvas>
+    <canvas id="canvas" width="300" height="300" hidden></canvas>
+    <form id="imageForm" name="imageForm" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <input type="hidden" name="imageData" id="imageData" value=""/>
+        <div class="controller" id="controller">
+          <a>
+            <button id="snap" class="btn btn-lg btn-secondary fw-bold border-black" >Capture</button>
+          </a>
+        </div>
+    </form>
   </main>
 
   <footer class="mt-auto text-white-50">
   </footer>
+
+  <script>
+    function show() {
+      var x = document.getElementById("video-wrap");
+      var y = document.getElementById("controller");
+      if (x.style.display != "block") {
+        x.style.display = "block";
+      }
+      if (y.style.display != "block") {
+        y.style.display = "block";
+      }
+    }
+  </script>
 
   <script type="text/javascript" src="{% static 'webpage/js/webcam.js' %}"></script>
 </div>
