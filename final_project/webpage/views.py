@@ -9,6 +9,7 @@ import torch, torchvision
 from torch import nn, optim
 from torchvision import datasets, models, transforms
 import tensorflow as tf
+import os
 
 # Create your views here.
 
@@ -42,16 +43,16 @@ def music(request, img):
     preds=torch.max(output.detach(), 1)[1].item()
     if(preds==0):
         #return angry list
-        return render(request,'webpage/music.html')
+        return render(request,'webpage/music.html', {'mood': 'Angry'})
     if(preds==1):
         #return happy list
-        return render(request,'webpage/music.html')
+        return render(request,'webpage/music.html', {'mood': 'Happy'})
     if(preds==2):
         #return neutral list
-        return render(request,'webpage/music.html')
+        return render(request,'webpage/music.html', {'mood': 'Neutral'})
     if(preds==3):
         #return sad list
-        return render(request,'webpage/music.html')
+        return render(request,'webpage/music.html', {'mood': 'Sad'})
 
 def about(request):
     return render(request, 'webpage/about.html', {'title': 'About'})

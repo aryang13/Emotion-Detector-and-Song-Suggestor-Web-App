@@ -8,7 +8,7 @@ const errorMsgElement = document.getElementById('errorMsgElement');
 const constraints = {
     audio: false,
     video: {
-        width: 400, height: 400
+        width: 300, height: 300
     },
 };
 
