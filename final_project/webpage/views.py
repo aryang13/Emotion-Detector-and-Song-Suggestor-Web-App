@@ -10,6 +10,7 @@ from torch import nn, optim
 from torchvision import datasets, models, transforms
 import tensorflow as tf
 import os
+from PIL import Image
 
 # Create your views here.
 
@@ -32,13 +33,13 @@ def write_image(image):
 
 def music(request, img):
     write_image(img)
-    print(img.shape)
     model=torch.load('projectmod',map_location=torch.device('cpu'))
     model.eval()
-    #xform = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor()])
-    #data = xform(img)
-    data = np.moveaxis(img, -1, 0)
-    data=torch.from_numpy(data).float()
+    xform = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor()])
+    img=Image.open('webpage\\images\\image.png')
+    data = xform(img)
+    #data = np.moveaxis(img, -1, 0)
+    #data=torch.from_numpy(data).float()
     output = model(data[None, ...])
     preds=torch.max(output.detach(), 1)[1].item()
     if(preds==0):
