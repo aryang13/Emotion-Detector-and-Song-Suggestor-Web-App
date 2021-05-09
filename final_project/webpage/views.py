@@ -103,16 +103,16 @@ def music(request, img):
     preds=torch.max(output.detach(), 1)[1].item()
     if(preds==0):
         #return angry list
-        return render(request,'webpage/music.html', {'mood': 'Angry'})
+        return render(request,'webpage/music.html', {'mood': 'Angry', 'playlist': 'playlist/5XBvBzMBRcdCrKUAs5VoR4'})
     if(preds==1):
         #return happy list
-        return render(request,'webpage/music.html', {'mood': 'Happy'})
+        return render(request,'webpage/music.html', {'mood': 'Happy', 'playlist': 'playlist/14FMPAe3yffuI47MUX3Alg'})
     if(preds==2):
         #return neutral list
-        return render(request,'webpage/music.html', {'mood': 'Neutral'})
+        return render(request,'webpage/music.html', {'mood': 'Neutral', 'playlist': 'playlist/31n4J7BzWnoOPLuTCyZYRv'})
     if(preds==3):
         #return sad list
-        return render(request,'webpage/music.html', {'mood': 'Sad'})
+        return render(request,'webpage/music.html', {'mood': 'Sad', 'playlist': 'playlist/42zINuckj3dU1CHcGBSrwk'})
 
 def about(request):
     return render(request, 'webpage/about.html', {'title': 'About'})
