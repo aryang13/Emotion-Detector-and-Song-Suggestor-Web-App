@@ -9,4 +9,3 @@ tensorflow
 torch
 torchvision
 pymysql
-tf-nightly
