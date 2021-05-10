@@ -1,7 +1,11 @@
-Django==3.1.7
-PyMySQL==1.0.2
+Django==3.2.2
+mtcnn
+Keras
+numpy
 opencv-python
-torchvision
-torch==1.8.1
+Pillow
+requests
 tensorflow
-tf-nightly-gpu
+torch
+torchvision
+pymysql
