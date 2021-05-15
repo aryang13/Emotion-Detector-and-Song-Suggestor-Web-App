@@ -1,0 +1,1 @@
+Definitely try strategies like dropout to reduce overfitting. It might also help to look at some of the test images which are not identified correctly to get some hints. 
