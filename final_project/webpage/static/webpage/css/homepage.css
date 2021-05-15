@@ -11,7 +11,7 @@
 }
 
 .btn-lg{
-  border-radius: 9.3rem;
+  border-radius: 2.3rem;
 }
 
 
@@ -72,3 +72,10 @@ body {
   display: none;
 }
 
+.font {
+  font-family: 'Roboto', sans-serif;
+}
+
+.body-text {
+  font-family: 'Lato', sans-serif;
+}

@@ -41,26 +41,11 @@ html {
   }
   
   
-  /*button */
-  .btn-secondary,
-  .btn-secondary:hover,
-  .btn-secondary:focus {
-    color: #000000;
-    text-shadow: none; 
-  }
   
   .transparency {
     background-color: #ffffff00;
   }
   
-  .btn-lg{
-    border-radius: 9.3rem;
-  }
-  
-  
-  /*
-   * Base structure
-   */
   
   body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
@@ -71,10 +56,6 @@ html {
     max-width: 42em;
   }
   
-  
-  /*
-   * Header
-   */
   
   .nav-masthead .nav-link {
     padding: .25rem 0;
@@ -107,4 +88,10 @@ html {
     font-size: 1.2rem;
   }
   
+  .font {
+    font-family: 'Roboto', sans-serif;
+  }
   
+  .body-text {
+    font-family: 'Lato', sans-serif;
+  }

@@ -9,7 +9,12 @@
     <title>About Us</title>
     
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">  
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -33,10 +38,10 @@
 <body  >
 
   <div >
-  <header class="mb-auto cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" >
+  <header class="mb-auto cover-container d-flex w-100 h-100 p-3 mx-auto flex-column font" >
     <div>
-      <h3  class="float-md-start mb-0"> <a  class="nav-link" href="{% url 'homepage' %}" style="color: white"> Final Project</a></h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
+      <h3  class="float-md-start mb-0"> <a  class="nav-link" href="{% url 'homepage' %}" style="color: white; font-family: 'Roboto', sans-serif"> Final Project</a></h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end" style="font-family: 'Roboto', sans-serif">
         <a class="nav-link" aria-current="page" href="{% url 'homepage' %}">Home</a>
         <a class="nav-link active" href="{% url 'about' %}">About</a>
       </nav>
@@ -44,17 +49,17 @@
   </header>
 
   <main >
- <div class="about">
+ <div class="about" style="font-family: 'Roboto', sans-serif;">
   <h1>Hi, we are team Allosaurus </h1>
   <p>Our team consists of Deepan Chakravarthy, Aryan Gandhi, Steve He, and Arya Phan :)</p>
   
 </div>
 
 <div class="about-body">
-<h2 style="text-align:center; color: white">Our CPEN 291 Final Project</h2>
+<h2 style="text-align:center; color: white; font-family: 'Roboto', sans-serif;">Our CPEN 291 Final Project</h2>
 </div>
 
-<div class="text" style="padding-top: 15px;">
+<div class="text" style="padding-top: 15px;  font-family: 'Lato', sans-serif">
   <p>People enjoy listening to music during different times of the day and accordingly, choose specific 
     genres of music based on their current mood and feelings. This project focusses on building a web application 
     that predicts users' moods (e.g. sadness, anger, happiness, neutral) based on their facial expressions using computer vision. 
