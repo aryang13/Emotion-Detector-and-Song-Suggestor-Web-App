@@ -3,3 +3,5 @@ cloud_sql_proxy.exe
 env/
 webpage/static/admin/
 db.sqlite3
+webpage/faceonly/image.png
+webpage/images/image.png

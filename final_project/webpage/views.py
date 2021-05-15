@@ -2,25 +2,21 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import base64
 import numpy as np
-import cv2
 from django.views.generic import TemplateView
 import requests, re, time
 import torch, torchvision
 from torch import nn, optim
 from torchvision import datasets, models, transforms
 import tensorflow as tf
-import os
 from PIL import Image
-import mtcnn
-# Create your views here.
+from mtcnn import MTCNN
+import cv2
+import os
 
 #The MTCNN takes as a input a single image and outputs the bounding box coordinates for that image where the face is.
 #The code below takes in an input directory and runs the MTCNN on all the images in that directory and outputs in
 #output directory only the bounded images (only faces).
 #link to code below: https://stackoverflow.com/questions/65105644/how-to-face-extraction-from-images-in-a-folder-with-mtcnn-in-python
-from mtcnn import MTCNN
-import cv2
-import os
 def crop_image(source_dir, dest_dir, mode):
     if os.path.isdir(dest_dir)==False:
         os.mkdir(dest_dir)
@@ -68,8 +64,6 @@ def crop_image(source_dir, dest_dir, mode):
 
     return uncropped_file_list
 
-
-
 def homepage(request):
 
     data_uri = request.POST.get('imageData')
@@ -97,8 +91,6 @@ def music(request, img):
     xform = transforms.Compose([transforms.Resize((224, 224)), transforms.ToTensor()])
     img=Image.open('webpage\\faceonly\\image.png')
     data = xform(img)
-    #data = np.moveaxis(img, -1, 0)
-    #data=torch.from_numpy(data).float()
     output = model(data[None, ...])
     preds=torch.max(output.detach(), 1)[1].item()
     if(preds==0):
