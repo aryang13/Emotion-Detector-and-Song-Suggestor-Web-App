@@ -59,16 +59,19 @@
 
   <main class="px-3">
     <h1>Your Mood is {{ mood }}</h1>
-    <p class="lead">I hope you're having a great day <3</p>
-   
-    <!-- I put a dummy song for now -->
-  <!--  <iframe src="https://open.spotify.com/embed/track/0ri0Han4IRJhzvERHOZTMr" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+    {% if mood == "Happy" %}
+      <p class="lead">Great to hear you're feeling happy. Enjoy your day <3</p>
+    {% elif mood == "Sad" %}
+      <p class="lead">Did you know that sad music actually have relaxing and calming effects? We hope this will make you feel better :)</p>
+    {% elif mood == "Angry" %}
+      <p class="lead">Who knows extreme music can be a better way to vent?</p>
+    {% else %}
+      <p class="lead">We hope you're having a great day :)</p>
+    {% endif %}
+    
   <iframe src="https://open.spotify.com/embed/{{playlist}}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> 
   <div class="row align-items-start">
-     <!-- <div class="col">
-       <button class="btn btn-lg btn-secondary fw-bold border-black transparency" >Shuffle</button>
-
-     </div> -->
+     
 
      <div class="col">
       <a href="{% url 'homepage' %}">
