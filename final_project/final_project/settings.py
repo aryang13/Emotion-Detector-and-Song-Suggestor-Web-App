@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -25,8 +24,7 @@ SECRET_KEY = 'nq7g158eyy)#wgjg9jv8*tloht82d)esd)q!-9uivs6_tigctd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['10.168.0.2']
 
 # Application definition
 
@@ -70,11 +68,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'final_project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 import pymysql  # noqa: 402
+
 pymysql.version_info = (1, 4, 6, 'final', 0)  # change mysqlclient version
 pymysql.install_as_MySQLdb()
 
@@ -83,19 +81,23 @@ if os.getenv('GAE_APPLICATION', None):
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'HOST': '/cloudsql/valid-broker-309114:us-central1:webpage-instance',
-            'USER': 'user1',
-            'PASSWORD': '123456789',
+            'USER': 'Steve',
+            'PASSWORD': 'hckhck0620',
             'NAME': 'main',
         }
     }
 else:
-     DATABASES = {
+    DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/valid-broker-309114:us-central1:webpage-instance',
+            'PORT': '3306',
+            'USER': 'Steve',
+            'PASSWORD': 'hckhck0620',
+            'NAME': 'main',
         }
     }
-    
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -114,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -127,7 +128,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
